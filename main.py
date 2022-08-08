@@ -5,7 +5,7 @@ import gspread
 from folium.plugins import MarkerCluster
 import branca
 
-gc = gspread.oauth()
+gc = gspread.service_account()
 sheet = gc.open('colorado_springs').get_worksheet(0)
 
 df = pd.DataFrame(sheet.get_all_records())
