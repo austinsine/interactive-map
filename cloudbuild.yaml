@@ -4,7 +4,7 @@ steps:
       - gcloud
       - functions
       - deploy
-      - hello_world
+      - my_map
       - --region=us-central1
       - --source=.
       - --trigger-http
