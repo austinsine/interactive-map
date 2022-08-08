@@ -1,11 +1,19 @@
 steps:
-  - name: 'mirror.gcr.io/library/golang'
-    args: ['go', 'version']
-  - name: 'mirror.gcr.io/library/golang'
-    args: ['go', 'test']
-    dir: 'code'
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['functions', 'deploy', 'cloudfunction01', '--trigger-http', '--runtime', 'go113', '--entry-point', 'HelloWorld']
-    dir: 'code'
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['functions', 'add-iam-policy-binding', 'cloudfunction01', '--member', 'allUsers', '--role', 'roles/cloudfunctions.invoker']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args:
+      - gcloud
+      - functions
+      - deploy
+      - hello_world
+      - --region=us-central1
+      - --source=.
+      - --trigger-http
+      - --runtime=python39
+      - --memory=128MB
+      - --timeout=60
+      - --min-instances=0
+      - --max-instances=1
+      - --security-level=secure-always
+      - --ingress-settings=all
+      - --no-allow-unauthenticated
+      - --service-account=interactive-map@my-map-358516.iam.gserviceaccount.com
