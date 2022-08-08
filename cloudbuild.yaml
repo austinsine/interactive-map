@@ -15,5 +15,5 @@ steps:
       - --max-instances=1
       - --security-level=secure-always
       - --ingress-settings=all
-      - --no-allow-unauthenticated
+      - --allow-unauthenticated
       - --service-account=interactive-map@my-map-358516.iam.gserviceaccount.com
