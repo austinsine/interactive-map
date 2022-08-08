@@ -17,3 +17,4 @@ steps:
       - --ingress-settings=all
       - --allow-unauthenticated
       - --service-account=interactive-map@my-map-358516.iam.gserviceaccount.com
+      - --logging-CLOUD_LOGGING_ONLY
