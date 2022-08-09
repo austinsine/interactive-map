@@ -17,5 +17,5 @@ steps:
       - --ingress-settings=all
       - --allow-unauthenticated
       - --logsBucket-us-central1
-      - --service-account=interactive-map@my-map-358516.iam.gserviceaccount.com
       - --logging-CLOUD_LOGGING_ONLY
+      - --service-account=interactive-map@my-map-358516.iam.gserviceaccount.com
